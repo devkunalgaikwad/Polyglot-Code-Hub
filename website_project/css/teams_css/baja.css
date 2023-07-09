@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@900&display=swap');
+
+@keyframes scroll {
+    0%{
+        transform: translateX(calc(-100% - 32px));
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+#bajanav{
+    min-height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('images_baja/banner2.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    z-index: 5;
+}
+header{
+    background: white;
+}
+.navlinks ul li a{
+    color: black;
+}
+#main{
+    position: relative;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#main img {
+    width: 365px;
+    position: relative;
+    z-index: 2;
+    top: 4%;
+}
+#herotxt{
+    font-size: 16px;
+    position: absolute;
+    width: 40vw;
+    z-index: 3;
+    top: 20%;
+    text-transform: uppercase;
+    text-align: center;
+}
+.heronav{
+    display: inline-block;
+    position: absolute;
+    text-align: left;
+    top: 20%;
+    text-transform: uppercase;
+    width: 75px;
+    left: 5%;
+    font-size: 11px;
+}
+#_12{
+    color: red;
+}
+#heronavimg{
+    width: 20px;
+}
+#scrolldiv1{
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#scrolldiv1::-webkit-scrollbar{
+    display: none;
+}
+#scrolldiv1 h1{
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 800;
+    font-family: 'Geologica', sans-serif;
+    margin-right:30px ;
+    letter-spacing: 4px;
+    animation-name: scroll;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scrolldiv2{
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    z-index: 3;
+}
+#scrolldiv2::-webkit-scrollbar{
+    display: none;
+}
+#scrolldiv2 h1{
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 800;
+    font-family: 'Geologica', sans-serif;
+    margin-right:30px ;
+    letter-spacing: 4px;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    animation-name: scroll;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scrolldiv3{
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#scrolldiv3::-webkit-scrollbar{
+    display: none;
+}
+#scrolldiv3 h1{
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 800;
+    font-family: 'Geologica', sans-serif;
+    margin-right:30px ;
+    letter-spacing: 4px;
+    animation-name: scroll;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}
+.heroinfo {
+    display: inline-block;
+    position: absolute;
+    text-align: left;
+    top: 85%;
+    text-transform: uppercase;
+    width: 300px;
+    left: 5%;
+    font-size: 11px;
+}
+.heroinfo p{
+    font-weight: 800;
+}
+.subtitle {
+    display: inline-block;
+    position: absolute;
+    text-align: left;
+    top: 90%;
+    text-transform: uppercase;
+    width: 300px;
+    right: -6%;
+    font-size: 9px;  
+}

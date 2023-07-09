@@ -1,0 +1,182 @@
+@media(max-width: 700px){
+    /* nav  */
+    .navlinks{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: -35px;
+        right: -235px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    .navlinks ul{
+        display: block;
+    }
+    #menu{
+        display: block;
+        width: 25px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .clglogo img{
+        width: 45px;
+    }
+    .clglogo{
+        margin-right: 10px;
+    }
+    #close{
+        display: block;
+        width: 20px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    #mandal{
+        font-size: 10px;
+    }
+    #clg_name{
+        font-size: 12px;
+    }
+    .clgname h4{
+        font-size: 8px;
+    }
+    .clgname h5{
+        font-size: 4px;
+        margin: 0 0 1px 0;
+    }
+    .navlinks ul li {
+        margin: 16px 19px;
+    }
+    /* nav ends */
+    .textbox h1{
+        font-size: 24px;
+    }
+    .textbox h1 p{
+        font-size: 10px;
+    }
+    .discription{
+        margin: 34px 70px;
+    }
+    .discriptionbox1{
+        flex-direction: column;
+        margin: 65px -27px;
+    }
+    .discriptionbox2{
+        flex-direction: column;
+    }
+    /* .textbox img{
+        width: 130px;
+    }
+    .teamslist h1 {
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .teambox img {
+        display: flex;
+        width: 126px;
+        padding: 25px;
+        align-items: center;
+    } */
+    .teamlinksrow{
+        flex-direction: column;
+    }
+    .teamlinkscol{
+        margin: 20px auto;
+    }
+    .layer h3{
+        font-size: 25px;
+        font-weight: 2;
+    }
+    .reviewscol p{
+        margin-bottom: 42px;
+        font-size: 12px;
+    }
+    .reviewscol h3{
+        font-size: 16px;
+    }
+    .reviewsrow {
+        margin: 45px -93px;
+        display: flex;
+        justify-content: center;
+    }
+    .cta{
+        margin: 45px auto 45px auto;
+    }
+    .cta a{
+        font-size: 12px;
+    }
+    .footer{
+        background-color: rgb(55, 54, 54);
+    }
+    .quicklinks {
+        margin: 30px 5vw -30px 5vw;
+        display: flex;
+        padding: 25px 0 0 0;
+        justify-content: center;
+        display: none;
+      }
+    .sociallinks h4 {
+        margin: 2px 0 7px 0;
+        font-weight: 600;
+        color: #403f3f;
+    }
+    .sociallinks p {
+        font-size: 6px;
+        padding: 0 5vw;
+    }
+    .sociallinks h6 {
+        font-size: 5px;
+        color: dimgray;
+        padding-bottom: 12px;
+    }
+    .collegsite ul li{
+        list-style: disc;
+        color: white;
+        font-size: 9px;
+    }
+    .collegsite ul li a{
+        color: white;
+        text-decoration: none;
+    }
+    .collegsite {
+        margin: 10px 5vw;
+    }
+    .collegsite h5{
+        color: red;
+        font-size: 11px;
+    }
+    .extra ul li{
+        list-style: disc;
+        color: white;
+        font-size : 9px;
+    }
+    .extra{
+        width: 27vw;
+        margin: 10px;
+    }
+    .extra ul li a{
+        color: white;
+        text-decoration: none;
+    }
+    .extra h5{
+        color: red;
+        font-size: 11px;
+    }
+    .contactmail ul li{
+        list-style: disc;
+        color: white;
+        font-size: 9px;
+    }
+    .contactmail{
+        margin: 10px;
+    }
+    .contactmail h5{
+        color: red;
+        font-size: 11px;
+    }
+    .contactmail ul li a{
+        color: white;
+        text-decoration: none;
+    }
+}

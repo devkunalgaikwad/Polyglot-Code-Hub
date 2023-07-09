@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List, table and form</title>
+</head>
+<body>
+    <!-- but in actual we don't use type attribute -->
+    <ul type ='disc'>
+        <li>About</li>
+        <li>Home</li>
+        <li>Services</li>
+    </ul>
+
+    <ol type="A">
+        <li>About</li>
+        <li>Home</li>
+        <li>Services</li>
+    </ol>
+
+    <div>
+        <table>
+        <thead>
+            <caption>This data of Student</caption>
+            <tr>
+                <th>Name</th>
+                <th>Student id</th>
+                <th>class</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Kunal</td>
+                <td>236</td>
+                <td>TYME</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div>
+        <form action="python.py">
+            <input type="text" placeholder="Enter your name"><br>
+            <label for="section">
+                <input type="radio" name="deparnment" id="mech" class="deparnment">Mechanical
+            </label>
+            <label for="sectiona">
+                <input type="radio" name="deparnment" id ='cm'class="deparnment">Computer
+            </label>
+            <label for="sectionb">
+                <input type="radio" name="deparnment" id="entc"class="deparnment">ENTC
+            </label>
+            <label for="checkbox">
+                <input type="checkbox" name="canteen" id="food" class ='canteen'>
+            </label>
+            <label for="food">Want food</label>
+            <textarea name="explain" id="explain" placeholder = 'Explain why you want to join team'cols="30" rows="10"></textarea>
+
+            <select name="car" id="car">
+                <option value="on-car">Select_car</option>
+                <option value="omni">Omni</option>
+                <option value="i20">i20</option>
+            </select>
+        </form>
+
+        <iframe src="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input" frameborder="0"></iframe>
+        <video src="VID20221005122644.mp4" controls autoplay loop muted width="200"></video>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratice set 4</title>
+  </head>
+  <body>
+    <!-- to create page video embeded on it -->
+    <!-- <video src="VID20221005122644.mp4" width="150" autoplay muted controls loop>video</video> -->
+
+    <!-- form for travel details -->
+    <head>
+      <h2>Neeta travel agencies</h2>
+    </head>
+    <main>
+      <div>
+        <form action="python.py">
+            <caption><h2>Enter your personal_details</h2></caption>
+            <label for="personal_details">
+                <h4>Enter your name</h4>
+                <input type="text" name="first_name" class ='personal_details' id="001" placeholder="Enter your first_name"><br>
+                <h4>address</h4>
+                <textarea name="address" id="002" cols="30" rows="10"></textarea> <br>
+                <h4>Enter your phone number</h4>
+                <input type="tel" name="phone_number" id="003" class="personal_details"><br>
+                <h4>Enter your id proof</h4>
+                <input type="number" name="id_proof" id="004" class="personal_details"><br>
+                <h4>Enter your email address</h4>
+                <input type="email" name="email" id="005"><br>
+            </label>
+            <caption><h2>Enter your travel details</h2></caption>
+            <label for="travel_details">
+                <h4>Select from which city you want to travel</h4>
+                <select name="selected_city_from" class="travel_details" id="006">
+                    <option value="no_city_selected"> Select city</option>
+                    <option value="pune">Pune</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="satara">Satara</option>
+                    <option value="nagpur">Nagpur</option>
+                </select><br>
+                <h4>Select city to reach</h4>
+                <select name="selected_city_to" id="007">
+                    <option value="pune">Pune</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="satara">Satara</option>
+                    <option value="nagpur">Nagpur</option>
+                </select><br>
+                <h4>Select date to travel</h4>
+                <input type="date" name="travel_date" id="008">
+                <input type="button" value="jafjd">
+            </label>
+        </form>
+      </div>
+      <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Team</th>
+                    <th>score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Virat</td>
+                    <td>RCB</td>
+                    <td>99</td>
+                </tr>
+                <tr>
+                    <td>Rohit</td>
+                    <td>Mi</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>Dhoni</td>
+                    <td>CSK</td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

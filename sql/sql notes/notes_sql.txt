@@ -1,0 +1,93 @@
+#use is used for use file to create a table
+use Test1
+Create table Testtable_1
+(
+	emp_id int,
+	last_name varchar(50) not null,
+	first_name varchar(50) not null,
+);
+
+alter table Testtable_1 add age int
+alter table Testtable_1 alter column emp_id char(10)
+alter table Testtable_1 drop column age
+
+#it is used for primary key
+create table emp4
+( fullname varchar(50)not null,
+	lastname varchar(50)not null,
+	constraint emp_p primary key (fullname,lastname)
+);
+
+use test2
+create table emp45
+( emp_id int primary key,
+lastname varchar(50)not null,
+firstname varchar(50)not null,
+)
+
+#it is used to do primary key in existing table
+alter table emp2
+add constraint emp_pri primary key (lastname)
+
+
+#it is used to create foreign key
+use test1
+create table product
+( prod int primary key,
+	prod_name varchar(50) not null,
+	category varchar(50)
+);
+
+#for foreign key it must to give foreign key name and its references followed by table name and to which the foreign key is to
+
+create table orders
+(	order_id int primary key,
+	product_id int not null,
+	quantity int,
+
+	constraint fk_product_id
+	foreign key (product_id)
+	references product (prod)
+);
+
+#unique is used for the row must a unique value it not repeated
+#check id used for a condition must be satisfied by all rows in a table
+
+#create view is it creates a virturaly table but it is not table it representation of it
+
+use test2
+CREATE TABLE Orders
+(product_id int primary key,
+product_name varchar(50),
+quantity int
+);
+CREATE VIEW TestView AS SELECT * FROM Orders
+
+#it is for to get a specific column
+
+CREATE VIEW TestView1 AS SELect product_id FROM Orders
+
+#it is to insert data in table
+
+use test1
+insert into employee (first_name,salary)
+values ('Kunal Gaikwad', 50000);
+
+#it is used for to add values directly
+insert <table_name> values('')
+
+
+
+
+#it is used for to data from another table 
+use Test1
+
+insert into employee(first_name,salary)
+(select emp_name , salary from employee_data)
+
+
+#if we want to put condition to add a data
+use Test1
+
+insert into employee(first_name,salary)
+(select emp_name , salary from employee_data where salary < 50000)

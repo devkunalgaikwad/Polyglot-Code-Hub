@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display inline</title>
+    <style>
+         /* while using inline method width and height is not applicable*/
+        .box1{
+            background-color: blue;
+            display: inline;
+            color: white;
+            margin-left: 24px;
+            /* visibility: hidden;
+            display: none; */
+        }
+        /* to encounter above problem inline-block rule is used is same as inline but here we can adjust the heigth and width */
+        .box2{
+            background-color: red;
+            display: inline-block;
+            margin: 45px;
+            padding: 45px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class="box2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+</body>
+</html>

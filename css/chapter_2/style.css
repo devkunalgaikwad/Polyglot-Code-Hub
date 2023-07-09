@@ -1,0 +1,17 @@
+/* we can give color according to us */
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.red{
+    background-color: rgb(195, 52, 52);
+    color: white;
+    height: 500px;
+}
+
+.green{
+    background-color: green;
+    color: black;
+}

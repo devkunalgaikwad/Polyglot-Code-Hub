@@ -1,0 +1,37 @@
+@media(max-width: 700px){
+    .contactrow {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .submitbtn{
+        padding: 2px 4px;
+    }
+    .contactcol input{
+        width: 60vw;
+    }
+    .contactcol div span p{
+        font-size: 10px;
+    }
+    textarea {
+        width: 59vw;
+    }
+    #confoot {
+        margin: 16px 0 5px 0;
+        font-weight: 600;
+      }
+    #conpfoot {
+        font-size: 5px;
+    }
+    .icons img {
+        width: 11vw;
+    }
+    .contactcol div h5 {
+        font-size: 15px;
+    }
+    .location iframe{
+        width: 80vw;
+    }
+    .contactcol div {
+        margin-left: 48px;
+      }
+}

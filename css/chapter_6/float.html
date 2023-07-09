@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+        .box1{
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            float: right;
+        }
+        .box2{
+            background-color: black;
+            height: 100px;
+            width: 100px;
+            color: white;
+            float: right;
+            /* it is indication that no elements cannot can exist at right side */
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">It is box1</div>
+    <div class="box2">It is box2</div>
+</body>
+</html>

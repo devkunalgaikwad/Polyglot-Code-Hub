@@ -1,0 +1,7 @@
+.flex-all-center{
+    display: flex;
+    /* it align items in center in horizontal  */
+    justify-content: center;
+    /* align center in vertical-align */
+    align-items: center;
+}

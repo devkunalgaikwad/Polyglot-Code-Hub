@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container{
+            display: grid;
+            background-color: gray;
+            grid-template-columns: 30vw 30vw;
+            grid-column-gap: 10vw;
+            margin: 10px;
+            grid-template-rows: 30vh;
+            width: 90vw;
+            min-height: 110px;
+        }
+        .items{
+            background-color: aqua;
+            border: 2px;
+        }
+        .logo{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="OIP.jpg" alt="Unable to load" class="logo">
+            <img src="photo.jpg" alt="Unable to load" class="logo">
+        </div>
+    </header>
+</body>
+</html>

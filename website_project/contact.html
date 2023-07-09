@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css\contactresponsive.css">
+    <link rel="stylesheet" href="css\responsive.css">
+</head>
+<body>
+    <header class="sub_bc">
+        <nav>
+            <img src="css\images\mmcoe_logo.jpg">
+            <div class="clg_name">
+                <h3 id="mandal">Marathwada Mitra Mandal's</h3>
+                <h3 id="clg_name">Marathwada Mitra Mandal's<br>College of Engineering</h3>
+                <h5>(Approved by AICTE New Delhi, Recognized by DTE<br>Maharashtra and affiliated to Savitribai Phule Pune University)</h5>
+                <h4>Accredited with 'A++' Grade by NAAC</h4>
+            </div>
+            <div class="nav_links" id="navlinks">
+                <img id='close'src="css\images\close.png" onclick="hidemenu()" alt="close">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="teams.html">TEAMS</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <img id='menu'src="css\images\menu.png" onclick="showmenu()" alt="menu">
+        </nav>
+        <div class="contacttextbox">
+            <h1>Contact Us</h1>
+        </div>
+    </header>
+    <main>
+        <section class="contactus">
+            <div class="contactrow">
+                <section class="location">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.8307542964003!2d73.8112554751095!3d18.491323882596532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfdad7143a4f%3A0xabd31c8f9e6eca9a!2sMarathwada%20Mitra%20Mandal&#39;s%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1685470877656!5m2!1sen!2sin" width="600" height="620" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </section>
+                <div class="contactcol">
+                    <form onsubmit="sendemail(); reset(); return false;">
+                        <h3>Send message to us</h3>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                        <input type="email" id="email" placeholder="Enter email address" required>
+                        <input type="subject" id="subject" placeholder="Enter your subject" required>
+                        <input type="subject" id="phoneno" placeholder="Enter your Phone no." required>
+                        <textarea rows="8" id="message" placeholder="Meassage"  required></textarea>
+                        <button type="submit" class="submitbtn">Send Meassage</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="contactcol">
+            <div>
+                <span>
+                    <h5>Marathwada Mitra Mandal's College of Engineering</h5>
+                    <p>Sr.No. 18, Plot No. 5/3, CTS No.205, Vadar Vasti Rd, behind Vandevi Temple, Karve Nagar, Pune, Maharashtra 411052</p>
+                </span>
+            </div>
+            <div>
+                <span>
+                    <h5>info@mmcoeteam.com</h5>
+                    <p>Email us for any qurey</p>
+                </span>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <section class="footer">
+            <h4 id="confoot">About us</h4>
+            <p>Marathwada Mitra Mandal's College of Engineering is not responsible for any changes or updates to the student activities mentioned on this website.<br>Please refer to official communications for the most accurate and up-to-date information.</p>
+            <div class="icons">
+                <a href="https://www.instagram.com/"><img src="css\images\social_media_photo.png" alt=""></a>
+            </div>
+        </section>
+    </footer>
+<!-- toggle menu -->
+<script>
+    var navlinks =document.getElementById('navlinks')
+function showmenu(){
+    navlinks.style.right='0';
+}
+function hidemenu(){
+    navlinks.style.right='-100%';
+}
+</script>
+<!-- contact section -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendemail(){
+        Email.send({
+        Host : "stmp.gmail.com",
+        Username : "12kunalgaikwad@gmail.com",
+        Password : "8E86C96795EB6998786CEB81B082CA3276EC",
+        To : '12kunalgaikwad@gmail.com',
+        From : document.getElementById('email').value,
+        Subject : 'New contact form enquiry',
+        Body : "Name: "+document.getElementById('name').value
+            + '<br> Email: '+ document.getElementById('email').value
+            + '<br> Message: '+ document.getElementById('message').value
+    }).then(
+        message => alert('Message Sent Successful')
+        );}
+</script>
+</body>
+</html>

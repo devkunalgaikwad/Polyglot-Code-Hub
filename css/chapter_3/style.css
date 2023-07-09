@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    width: 45px;
+    background-color: black;
+    color: red;
+    padding: 100px 45px;
+    margin: 50px;
+    border: 89px;
+    border-width: 45;
+    border-style: dashed;
+    border-radius: 9px;
+}
+
+.image{
+    width: 400px;
+    height: 200px;
+    background-image: url('photo.jpg');
+    border-radius: 45px;
+    border-color: white;
+    border: 100px;
+    border-width: 10px;
+    margin-left: 45px;
+}
+
