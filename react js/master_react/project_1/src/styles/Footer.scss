@@ -1,0 +1,140 @@
+footer{
+    background-color: rgb(208, 208, 208);
+    height: auto;
+}
+.quicklinks{
+    margin: 0px 5vw -30px 5vw;
+    display: flex;
+    padding: 25px 0 0 0;
+    justify-content: center;
+}
+.footerabout{
+    display: inline-block;
+    max-width: 20vw;
+    margin: 20px;
+}
+.footerabout h5{
+    color: #403f3f;
+    font-size: 18px;
+}
+.footerabout p{
+    margin: 10px 0;
+    font-size: 14px;
+    color: dimgray;
+}
+.collegsite h5{
+    color: #403f3f;
+    font-size: 18px;
+}
+.collegsite{
+    display: inline-block;
+    margin: 20px;
+}
+.collegsite ul{
+    margin: 10px 0;
+}
+.collegsite ul li{
+    list-style: none;
+}
+.collegsite ul li a{
+    font-size: 14px;
+    color: dimgray;
+    text-decoration: none;
+}
+.extra h5{
+    color: #403f3f;
+    font-size: 18px;
+}
+.extra{
+    display: inline-block;
+    margin: 20px;
+}
+.extra ul{
+    margin: 10px 0;
+}
+.extra ul li{
+    list-style: none;
+}
+.extra ul li a{
+    font-size: 14px;
+    color: dimgray;
+    text-decoration: none;
+}
+.contactmail{
+    display: inline-block;
+    margin: 20px;
+}
+.contactmail h5{
+    color: #403f3f;
+    font-size: 18px;
+}
+.contactmail ul{
+    margin: 10px 0;
+}
+.contactmail ul li{
+    list-style: none;
+}
+.contactmail ul li a{
+    font-size: 14px;
+    color: dimgray;
+    text-decoration: none;
+}
+.footerdevcon{
+    display: inline-block;
+    margin: 20px;
+}
+.footerdevcon h5{
+    color: #403f3f;
+    font-size: 18px;
+}
+.phone{
+    margin: 10px 0;
+}
+.phone img{
+    width: 10px;
+}
+.phone p{
+    display: inline-block;
+    font-size: 14px;
+    color: dimgray;
+}
+.email{
+    margin: 10px 0;
+}
+.email img{
+    width: 10px;
+}
+.email p{
+    display: inline-block;
+    font-size: 14px;
+    color: dimgray;
+}
+.icons img{
+    width: 5vw;
+    align-items: center;
+}
+hr{
+    border:none;
+    border-top: 2px solid rgb(188, 188, 188);
+    margin: 20px 0 6px 0;
+}
+.sociallinks{
+    text-align: center;
+}
+.sociallinks h4{
+    font-size: 12px;
+}
+.sociallinks p{
+    /* text-align: center; */
+    font-size: 7px;
+    margin: 4px auto;
+    color: dimgray;
+    text-align: center;
+    max-width: 40vw;
+    justify-content: center;
+}
+.sociallinks h6{
+    font-size: 6px;
+    color: dimgray;
+    padding-bottom: 12px;
+}
