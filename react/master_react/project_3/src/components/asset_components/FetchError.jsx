@@ -6,7 +6,7 @@ import {
   AlertDescription,
 } from '@chakra-ui/react'
 
-const Error = ({message}) => {
+const Error = ({message, typeError}) => {
   return (
       <>
           <Alert
@@ -20,7 +20,7 @@ const Error = ({message}) => {
     >
       <AlertIcon boxSize='40px' mr={0} />
       <AlertTitle mt={4} mb={1} fontSize='lg'>
-        Network Error
+        {typeError}
       </AlertTitle>
       <AlertDescription maxWidth='sm'>
         {message}
