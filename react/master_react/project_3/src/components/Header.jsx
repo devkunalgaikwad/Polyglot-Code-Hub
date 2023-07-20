@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Input, IconButton, useColorMode , useDisclosure, InputGroup, InputRightAddon, InputRightElement } from '@chakra-ui/react'
+import { Box, Button, HStack, Input, IconButton, useColorMode , useDisclosure, InputGroup, InputRightAddon, InputRightElement, Heading } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {MdDarkMode , MdLightMode, MdSearch} from 'react-icons/md'
@@ -31,10 +31,8 @@ const Header = () => {
       try{
         const {data} = await axios.get(`${server}/search?query=${coinInput}`)
         setCoinResult(data);
-        console.log(data)
         setLoading(false)
       }catch(error){
-        console.log(error)
         setLoading(false)
         setError(true)
       }
@@ -44,6 +42,61 @@ const Header = () => {
 
   return (
     <>
+      <Box display={'flex'} alignContent={'center'} justifyContent={'space-between'} p={'10px'} bgColor={'blackAlpha.900'}>
+        <Heading ml={'10px'}>CoinXplorer</Heading>
+        <Box minW={'20vw'} display={'flex'} justifyContent={'space-between'}>
+          <Button variant={'unstyled'} color={'white'}>
+              <Link to='/'>Home</Link>
+          </Button>
+          <Button variant={'unstyled'} color={'white'}>
+              <Link to='/exchanges'>Exchange</Link>
+          </Button>
+          <Button variant={'unstyled'} color={'white'}>
+              <Link to='/coins'>Coins</Link>
+          </Button>
+        </Box>
+        <Box minW={'9vw'} display={'flex'} justifyContent={'space-between'}>
+          <Button onClick={toggleColorMode} borderRadius={'full'} m={'0 10px'} >
+            Change to {colorMode === 'light' ? <MdDarkMode/>: <MdLightMode/>}
+          </Button>
+          <Button borderRadius={'full'} onClick={onOpen}>
+            <MdSearch/>
+          </Button>
+          <Drawer
+        isOpen={isOpen}
+        placement='right'
+        onClose={onClose}
+        size={'xl'}
+      >
+        <DrawerOverlay/>
+        <DrawerContent>
+          <InputGroup maxW={'60%'} justifyContent={'center'} >
+            <Input placeholder='Search for coin atleast three letters'm={'4'} onChange={(event)=>setCoinInput(event.target.value)} value={coinInput} />
+            <InputRightElement m={'4'}>
+              <Button onClick={handleSearch}>Ok</Button>
+            </InputRightElement>
+          </InputGroup>
+          <DrawerCloseButton m={'10px'} />
+          {coinResult.coins && coinResult.coins.length > 0 ? (
+            <HStack wrap={'wrap'} justifyContent={'space-evenly'}>
+              {coinResult.coins.map((i) => (
+                <SearchCard name={i.name} key={i.id} img={i.large}/>
+              ))}
+            </HStack>
+            ) : (
+            <FetchError message={'Unable to find coin'} typeError={'Search error'}/>
+          )}
+        </DrawerContent>
+      </Drawer>
+        </Box>
+      </Box>
+    </>
+  )
+}
+
+export default Header;
+
+{/* <Box>
       <HStack display={'flex'} p={'4'} justifyContent={'space-between'} shadow={'base'} bgColor={'blackAlpha.900'} w={'full'}>
         <Box justifyContent={'left'}>
           <Button m={'4px'} variant={'unstyled'} color={'white'}>
@@ -59,6 +112,7 @@ const Header = () => {
           {colorMode === 'light' ? <MdDarkMode/> : <MdLightMode/>}
         </Button>
         </Box>
+      </HStack>
         <Button borderRadius={'full'} onClick={onOpen}>
           <MdSearch/>
         </Button>
@@ -87,9 +141,5 @@ const Header = () => {
           )}
         </DrawerContent>
       </Drawer>
-      </HStack>
-    </>
-  )
-}
-
-export default Header;
+      </Box>
+    </> */}

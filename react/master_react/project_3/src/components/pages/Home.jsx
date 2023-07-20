@@ -13,8 +13,8 @@ const Home = () => {
   useEffect(() => {
     const fetchTrending = async () => {
       try {
-        const response = await axios.get(`${server}/search/trending`);
-        setTrending(response.data); // Access the 'data' property from the response
+        const {data} = await axios.get(`${server}/search/trending`);
+        setTrending(data.coins);
         setLoading(false);
       } catch (err) {
         setError(true);
@@ -22,8 +22,9 @@ const Home = () => {
       }
     };
     fetchTrending();
-  }, []);
+  },[]);
   return (
+    <>
     <Box bgColor={"blackAlpha.900"} w={"full"} h={"85vh"}>
       <motion.div
         style={{
@@ -56,37 +57,40 @@ const Home = () => {
       >
         Coins Junction
       </Text>
-      <Heading>Treading Coins</Heading>
-      <TableContainer>
+    </Box>
+    <Box>
+    <Heading mt={'10px'} textAlign={'center'}>Treading Coins</Heading>
+      <TableContainer m={'30px 10vw'}>
                     <Table variant={'simple'}>
                         <TableCaption>
-                          Trending Coins
+                          Data is updated every 10 minutes
                         </TableCaption>
                         <Thead>
                             <Tr>
-                                <Th display={'flex'}justifyContent={'flex-end'}>Name</Th>
+                                <Th textAlign={'right'}>Name</Th>
                                 <Th>Symbol</Th>
-                                <Th>ID & Coin ID</Th>
+                                <Th>ID or Coin ID</Th>
                                 <Th>Market Cap Rank</Th>
-                                <Th>Price</Th>
+                                <Th>Price(in BTC)</Th>
                                 <Th>Score</Th>
                             </Tr>
                         </Thead>
                         <Tbody>
                             {trending.map((i) => (
                                 <Tr key={i.id}>
-                                    <Td display={'flex'} alignItems={'center'} justifyContent={'space-between'} >{i.name}</Td>
-                                    <Td>{i.symbol} </Td>
-                                    <Td>{i.id} </Td>
-                                    <Td>{i.market_cap_rank} </Td>
-                                    <Td>{i.price_btc} </Td>
-                                    <Td>{i.score} </Td>
+                                    <Td display={'flex'} alignItems={'center'} justifyContent={'space-between'} ><img src={i.item.small} alt="" />{i.item.name}</Td>
+                                    <Td>{i.item.symbol} </Td>
+                                    <Td>{i.item.id} </Td>
+                                    <Td>{i.item.market_cap_rank} </Td>
+                                    <Td>{i.item.price_btc} </Td>
+                                    <Td>{i.item.score} </Td>
                                 </Tr>
                             ))}
                         </Tbody>
                     </Table>
                 </TableContainer>
-    </Box>
+            </Box>
+    </>
   );
 };
 
