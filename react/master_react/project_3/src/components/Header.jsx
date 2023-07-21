@@ -25,12 +25,12 @@ const Header = () => {
   const [coinResult , setCoinResult] =useState([]);
   const [loading,setLoading] = useState(true);
   const [error,setError] = useState(false);
-
   const handleSearch= async()=>{
     const fetchCoinType = async()=>{
       try{
         const {data} = await axios.get(`${server}/search?query=${coinInput}`)
         setCoinResult(data);
+        console.log(data)
         setLoading(false)
       }catch(error){
         setLoading(false)

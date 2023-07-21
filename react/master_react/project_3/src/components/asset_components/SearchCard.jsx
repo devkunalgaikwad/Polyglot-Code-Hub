@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {VStack,Text, Image, HStack} from '@chakra-ui/react'
+import axios from 'axios'
+import {useParams} from 'react-router-dom'
+import { server } from '../..'
 
-const SearchCard = ({name,img}) => {
+const SearchCard = ({name,img,id}) => {
+  const [coinDetail, setCoinDetail] = useState([])
+  const params = useParams();
+  const coinSearch = async()=>{
+    try{
+      const {data} = await axios.get(`${server}/coin/${params.id}`)
+      setCoinDetail(data);
+      console.log(id)
+      console.log(data)
+    } catch(error){
+      console.log(error)
+    }
+    coinSearch();
+  }
   return (
     <>
         <a target={'Blank'}>
