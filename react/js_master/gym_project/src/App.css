@@ -45,7 +45,12 @@ body {
 .react-horizontal-scrolling-menu--wrapper {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  display: flex;
 }
 
 .detail-image {

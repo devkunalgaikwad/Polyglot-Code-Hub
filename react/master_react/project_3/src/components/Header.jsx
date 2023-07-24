@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Input, IconButton, useColorMode , useDisclosure, InputGroup, InputRightAddon, InputRightElement, Heading } from '@chakra-ui/react'
+import { Box, Button, HStack, Input, IconButton, useColorMode , useDisclosure, InputGroup, InputRightElement, Heading } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {MdDarkMode , MdLightMode, MdSearch} from 'react-icons/md'

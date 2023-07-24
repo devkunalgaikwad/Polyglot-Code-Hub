@@ -1,0 +1,54 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 24vw auto;
+  grid-template-rows: 20vh auto 15vh;
+  grid-template-areas: 
+    'nav mainSection'
+    'sideBar mainSection'
+    'player player';
+  grid-gap: 7px;
+}
+.nav{
+  grid-area: nav;
+  border-radius: 10px;
+  margin: 10px 5px 0px 25px;
+  padding: 10px;
+}
+.sideBar {
+  grid-area: sideBar;
+  border-radius: 10px;
+  margin: 10px 5px 0px 25px;
+  padding: 10px;
+}
+
+.mainSection {
+  grid-area: mainSection;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 10px 10px 0px 5px;
+  padding: 10px;
+  background-color: linear-gradient(to right, #ff8a00, #e52e71);
+}
+.discover {
+  /* Set the height of the Discover section */
+  height: 100%;
+  /* Apply the scrollable overflow only to the Discover section */
+  overflow-y: auto;
+  border-radius: 10px;
+}
+.discover::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+
+.player {
+  grid-area: player;
+  padding: 10px;
+  position:static;
+}
