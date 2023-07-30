@@ -1,7 +1,7 @@
 'use client'
 
 import { CarProps } from '@/types'
-import { calculateCarRent, mpgToKmpl } from '@/utils'
+import { calculateCarRent, generateCarImageUrl, mpgToKmpl } from '@/utils'
 import Image from 'next/image'
 import React,{useState} from 'react'
 import { CarDetail, CustomButton } from '.'
@@ -17,7 +17,7 @@ const CarCard = ({car}:CarCardProps) => {
   return (
     <div className='car-card group'>
       <div className='car-card__content'>
-        <h2 className='car-card__content'>
+        <h2 className='car-card__content-title'>
           {make}{model}
         </h2>
       </div>
@@ -27,7 +27,7 @@ const CarCard = ({car}:CarCardProps) => {
         </span>
       </p>
       <div className='relative w-full h-40 my-3 object-contain'>
-        <Image src={'/hero.png'} alt='Car model' fill priority className='object-contain'/>
+        <Image src={generateCarImageUrl(car)} alt='Car model' fill priority className='object-contain'/>
       </div>
       <div className='relative flex w-full mt-2'>
         <div className='flex group-hover:invisible w-full justify-between text-gray'>

@@ -1,3 +1,4 @@
+
 import exp from 'constants';
 import {MouseEventHandler} from 'react'
 
@@ -34,4 +35,26 @@ export interface CarDetailProps{
     isOpen:boolean;
     closeModal:()=>void;
     car?:CarProps
+}
+export interface FilterProps{
+    manufacturer: string
+    year: number
+    fuel:string
+    limit : number
+    model : string
+}
+
+export interface optionsProps{
+    title : string;
+    value: string;
+}
+
+export interface CustomFilterProps{
+    title:string;
+    options:optionsProps[];
+}
+
+export interface ShowMoreProps{
+    pageNumber: number;
+    isNext:boolean
 }
