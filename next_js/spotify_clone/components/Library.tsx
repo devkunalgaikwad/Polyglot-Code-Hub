@@ -11,7 +11,7 @@ const Library = () => {
     <div className='flex flex-col'>
         <div className='flex items-center justify-between px-5 pt-4'>
             <div className='inline-flex items-center gap-x-2'>
-                <TbPlaylist size={26} classname={'text-neutral-400'}/>
+                <TbPlaylist size={26} className={'text-neutral-400'}/>
                 <p className='text-neutral-400 font-medium text-md'>Your Library</p>
             </div>
             <AiOutlinePlus onClick={onClick} size={20} className={'text-neutral-400 hover:text-white transition cursor-pointer'}/>
