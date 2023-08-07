@@ -6,6 +6,7 @@ import {SectionWrapper} from '../hoc'
 import {projects} from '../constants'
 import {fadeIn,textVariant} from '../utils/motion'
 import { Tilt } from 'react-tilt'
+import Showcase from './Showcase'
 
 const ProjectCard =({index, name, description, tags, image, source_code_link})=>{
   return(
@@ -37,7 +38,7 @@ const Works = () => {
   return (
     <>
       <motion.div>
-        <p className={styles.sectionSubText}>Mly projects</p>
+        <p className={styles.sectionSubText}>My projects</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
       <div className='w-full flex'>
@@ -54,4 +55,4 @@ const Works = () => {
   )
 }
 
-export default SectionWrapper(Works,'')
+export default SectionWrapper(Works,"work")

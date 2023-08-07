@@ -33,7 +33,7 @@ const CarDetail = ({isOpen,closeModal,car}:CarDetailProps) => {
                         <Image src={generateCarImageUrl(car,'33')}  alt='Car' priority fill className='object-contain'/>
                       </div>
                       <div className='flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg'>
-                        <Image src={generateCarImageUrl(car,'angle')}  alt='Car' priority fill className='object-contain'/>
+                        <Image src={generateCarImageUrl(car,'5')}  alt='Car' priority fill className='object-contain'/>
                       </div>
                     </div>
                   </div>

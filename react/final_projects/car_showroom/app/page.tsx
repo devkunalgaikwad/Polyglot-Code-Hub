@@ -3,8 +3,10 @@ import { CustomFilter, Hero, SearchBar,ShowMore, CarCard} from '@/components'
 
 import { fuels, yearsOfProduction } from '@/constants';
 import { fetchCars } from '@/utils'
+import { Spinner } from '@chakra-ui/react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import {CgSearchLoading} from 'react-icons/cg'
 
 export default function Home() {
   const [allCars, setAllCars] = useState([])
@@ -67,7 +69,7 @@ export default function Home() {
             </div>
             {loading&&(
               <div className='mt-16 w-full flex-center'>
-                <Image src={'/loader.png'} alt='loader' width={50} height={50} className='object-contain'/>
+                <Spinner />
               </div>
             )}
             <ShowMore pageNumber= {limit/10} isNext={limit > allCars.length} setLimit={setLimit}/>

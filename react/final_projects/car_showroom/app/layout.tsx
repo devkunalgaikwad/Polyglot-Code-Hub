@@ -1,6 +1,9 @@
+'use client'
+
 import { Footer, Navbar } from '@/components'
 import './globals.css'
 import type { Metadata } from 'next'
+import {ChakraProvider} from '@chakra-ui/react'
 
 export const metadata: Metadata = {
   title: 'Car Dehko',
@@ -15,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={'relative'}>
-        <Navbar/>
-          {children}
-        <Footer/>
+        <ChakraProvider>
+          <Navbar/>
+            {children}
+          <Footer/>
+        </ChakraProvider>
       </body>
     </html>
   )

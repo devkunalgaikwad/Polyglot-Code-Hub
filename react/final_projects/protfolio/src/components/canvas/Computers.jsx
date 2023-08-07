@@ -41,3 +41,46 @@ const ComputersCanvas =()=>{
 }
 
 export default ComputersCanvas
+
+// import React, { Suspense,useEffect, useState } from 'react';
+// import { Canvas } from '@react-three/fiber';
+// import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
+// import CanvasLoader from '../Loader';
+
+// const LazyComputers = React.lazy(() => import('./lazyComponent/LazyComputer'));
+
+// const Computers = () => {
+//   const [isMobile, setIsMobile] = useState(false);
+
+//   useEffect(() => {
+//     const mediaQuery = window.matchMedia('(max-width:500px)');
+//     setIsMobile(mediaQuery.matches);
+
+//     const handleMediaQueryChange = (event) => {
+//       setIsMobile(event.matches);
+//     };
+
+//     mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+//     return () => {
+//       mediaQuery.removeEventListener('change', handleMediaQueryChange);
+//     };
+//   }, []);
+
+//   return (
+//     <Canvas frameloop='demand' shadows camera={{ position: [20, 3, 5], fov: 25 }} gl={{ preserveDrawingBuffer: true }}>
+//       <Suspense fallback={<CanvasLoader />}>
+//         <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
+
+//         {/* Lazy loading Computers component */}
+//         {/* <React.Suspense fallback={null}> */}
+//           <LazyComputers isMobile={isMobile} />
+//         {/* </React.Suspense> */}
+
+//         <Preload all />
+//       </Suspense>
+//     </Canvas>
+//   );
+// };
+
+// export default Computers;

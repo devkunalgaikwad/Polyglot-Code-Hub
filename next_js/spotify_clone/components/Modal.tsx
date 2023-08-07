@@ -21,8 +21,8 @@ const Modal = ({isOpen, onChange, title, description,children}:modalProps) => {
               {children}
             </div>
             <Dialog.Close asChild>
-              <button className='absolute top-[10px] right-[10px] text-neutral-400 hover:text-white inline-flex cursor-pointer appearance-none rounded-full justify-center items-center focus:outline-none'>
-                <IoMdClose size={25}/>
+              <button type='button' className='absolute top-[10px] right-[10px] text-neutral-400 hover:text-white inline-flex cursor-pointer appearance-none rounded-full justify-center items-center focus:outline-none' aria-label="Close">
+                <IoMdClose/>
               </button>
             </Dialog.Close>
           </Dialog.Content>

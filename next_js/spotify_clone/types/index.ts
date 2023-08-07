@@ -1,4 +1,4 @@
-import { User } from '@supabase/supabase-js';
+import { SupabaseClient, User } from '@supabase/supabase-js';
 import React from 'react';
 import {IconType} from 'react-icons'
 import Stripe from 'stripe';
@@ -114,6 +114,22 @@ export interface modalProps {
 
 export interface useAuthModalProps { 
     isOpen : boolean;
-    onOpen : boolean;
-    onClose  : boolean;
+    onOpen : ()=>void;
+    onClose  : ()=>void;
+}
+
+export interface inputProps extends React.InputHTMLAttributes<HTMLInputElement>{}
+
+export interface Song {
+    id : string;
+    user_id : string;
+    author :string;
+    title : string;
+    song_path : string;
+    image_path : string;
+}
+
+export interface SongItemProps {
+    data : Song;
+    onClick : (id:string)=> void;
 }
