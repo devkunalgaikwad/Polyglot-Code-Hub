@@ -40,9 +40,8 @@ export default async function Home() {
             "
           >
             <ListItem 
-              name="Liked Songs" 
-              image="/images/liked.png" 
-              href="liked" 
+              name="Liked Songs"
+              href="liked"
             />
           </div>
         </div>
@@ -53,11 +52,7 @@ export default async function Home() {
             Newest songs
           </h1>
         </div>
-        {
-          songs.map((song)=>(
-            <div key={song.id}>{song.title}</div>
-          ))
-        }
+        <PageContent songs={songs}/>
       </div>
     </div>
   )

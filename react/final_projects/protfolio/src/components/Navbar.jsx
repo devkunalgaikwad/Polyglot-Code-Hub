@@ -4,12 +4,14 @@ import {close, logo, menu} from '../assets'
 import {navLinks} from '../constants'
 import {Link, NavLink} from 'react-router-dom'
 import {AiOutlineCloseCircle} from 'react-icons/ai'
+import {Button, useColorMode} from '@chakra-ui/react'
 
 const Navbar = () => {
   const [active, setActive] = useState('')
   const [toggle,setToggle] = useState(false)
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}>
+    <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-[#f9d4c7]`}>
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link to={'/'} className='flex items-center gap-2' onClick={()=>{setActive('');window.scrollTo(0,0)}}>
           <img src={logo} alt='logo' className='w-9 h-9 object-contain'></img>
@@ -33,6 +35,11 @@ const Navbar = () => {
               ))}
             </ul>
           </div>
+        </div>
+        <div>
+          <Button onClick={toggleColorMode}>
+            Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
+          </Button>
         </div>
       </div>
     </nav>

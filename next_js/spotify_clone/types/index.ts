@@ -9,6 +9,7 @@ export interface boxProps{
 }
 export interface sideBarProps{
     children :React.ReactNode;
+    songs : Song[];
     className ?: string;
 }
 
@@ -28,7 +29,6 @@ export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>{}
 
 export interface ListItemProps {
-    image : string;
     name: string;
     href : string;
 }
@@ -132,4 +132,53 @@ export interface Song {
 export interface SongItemProps {
     data : Song;
     onClick : (id:string)=> void;
+}
+
+export interface PageContentProps {
+    songs : Song[];
+}
+
+export interface LibrayProps{
+    songs : Song[]
+}
+
+export interface PlayListItemProps {
+    data : Song;
+    onClick ?: (id:string)=>void;
+}
+
+export interface SearchProps{
+    searchParams:{
+        title:string;
+    }
+}
+
+export interface SearchContentProps {
+    songs : Song[];
+}
+
+export interface LikeButtonProps {
+    songId : string;
+}
+
+export interface LikedContentProps {
+    songs : Song[];
+}
+
+export interface PlayerStoreProps{
+    ids : string[];
+    activeId ?: string;
+    setId : (id:string)=>void
+    setIds : (ids:string[])=>void
+    reset : ()=>void
+}
+
+export interface PlayerContentProps {
+    song: Song;
+    songUrl : string;
+}
+
+export interface SliderProps {
+    value ?: number;
+    onChange?: (value:number)=>void;
 }

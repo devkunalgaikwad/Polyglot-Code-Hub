@@ -3,7 +3,7 @@
 import { Footer, Navbar } from '@/components'
 import './globals.css'
 import type { Metadata } from 'next'
-import {ChakraProvider} from '@chakra-ui/react'
+import {ChakraProvider, theme} from '@chakra-ui/react'
 
 export const metadata: Metadata = {
   title: 'Car Dehko',
@@ -17,8 +17,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Add the new favicon reference */}
+        <link rel="icon" href="favicon.ico" />
+        {/* Other meta tags, stylesheets, etc. */}
+      </head>
       <body className={'relative'}>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
           <Navbar/>
             {children}
           <Footer/>

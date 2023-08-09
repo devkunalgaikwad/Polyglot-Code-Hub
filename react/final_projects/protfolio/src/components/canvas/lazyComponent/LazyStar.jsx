@@ -15,7 +15,7 @@ const Stars = (props) => {
 //   });
 
   // Use useFrame to control animation loop
-  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));
+  const [sphere] = useState(() => random.inSphere(new Float32Array(9000), { radius: 1.2 }));
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
     ref.current.rotation.y -= delta / 15;
@@ -28,7 +28,7 @@ const Stars = (props) => {
       <Points positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color="#f272c8"
+          color="#241713"
           size={0.002}
           sizeAttenuation={true}
           depthWrite={false}

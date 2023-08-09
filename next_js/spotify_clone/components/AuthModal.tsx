@@ -24,7 +24,7 @@ const AuthModal = () => {
         }
     }
   return (
-    <Modal title='Welcome Back' description='Login to your account' isOpen={isOpen}  onChange={()=>{}}>
+    <Modal title='Welcome Back' description='Login to your account' isOpen={isOpen}  onChange={onChange}>
         <Auth supabaseClient={supabaseClient} theme='dark' magicLink providers={['github','google']} appearance={{theme: ThemeSupa, variables:{
             default:{
                 colors:{

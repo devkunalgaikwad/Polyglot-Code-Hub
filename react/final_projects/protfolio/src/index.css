@@ -10,10 +10,22 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: white;
 }::-webkit-scrollbar {
   width: 0rem;
 }
+/* p{
+  color: #555555;
+}
+.subheading {
+  color: #6C757D;
+  background: linear-gradient(to bottom, #D49E8D, #555555);
+}
+
+h2{
+  color: #333333;
+} */
+
 
 .hash-span {
   margin-top: -100px;
@@ -47,8 +59,8 @@
 
 .green-pink-gradient {
   background: "#00cea8";
-  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: linear-gradient(90.13deg, #D49E8D 1.9%, #555555 97.5%);
+  background: -webkit-linear-gradient(-66.13deg, #FF6D70 11.9%, #7878A9 114.5%);
 }
 
 .orange-text-gradient {

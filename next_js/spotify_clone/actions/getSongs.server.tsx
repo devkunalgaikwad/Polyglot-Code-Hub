@@ -3,8 +3,6 @@ import { cookies } from "next/headers";
 
 import { Song } from "@/types";
 
-// import supabase from "@/config/supabaseClient";
-
 const getSongs = async (): Promise<Song[]> => {
   const supabase = createServerComponentClient({cookies})
 
@@ -16,7 +14,6 @@ const getSongs = async (): Promise<Song[]> => {
   if (error) {
     console.log(error.message);
   }
-  console.log(data)
   return (data as any) || [];
 };
 
