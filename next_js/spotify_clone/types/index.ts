@@ -54,11 +54,12 @@ export interface Product {
     name ?: string;
     description ?: string;
     metadata ?: Stripe.Metadata;
+    image ?: string;
 }
 export interface Price {
     id : string;
     product_id ?: string;
-    active ?: string;
+    active ?: boolean;
     description ?: string;
     unit_amount ?:number;
     currency ?: string;
@@ -113,6 +114,11 @@ export interface modalProps {
 }
 
 export interface useAuthModalProps { 
+    isOpen : boolean;
+    onOpen : ()=>void;
+    onClose  : ()=>void;
+}
+export interface useSubscribeModal { 
     isOpen : boolean;
     onOpen : ()=>void;
     onClose  : ()=>void;
@@ -176,9 +182,20 @@ export interface PlayerStoreProps{
 export interface PlayerContentProps {
     song: Song;
     songUrl : string;
+    duration : number;
 }
 
 export interface SliderProps {
     value ?: number;
     onChange?: (value:number)=>void;
+}
+
+export interface SeekbarProps {
+     value ?: number;
+     max : number;
+     onChange ?: (value:number)=>void;
+}
+
+export interface ProductWithPrice extends Product{
+    prices ?: Price[]
 }

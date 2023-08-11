@@ -9,6 +9,7 @@ import ModalProvider from '@/providers/ModalProvider'
 import ToasterProvider from '@/providers/ToasterProvider'
 import getSongsById from '@/actions/getSongsById'
 import exp from 'constants'
+import getActiveProductWithPrices from '@/actions/getActiveProductWithPrices'
 
 const font = Figtree({ subsets: ['latin'] })
 
@@ -25,13 +26,14 @@ export default async function RootLayout({
   children: React.ReactNode
 }) {
   const userSongs = await getSongsById()
+  const products = await getActiveProductWithPrices()
   return (
     <html lang="en">
       <body className={font.className}>
         <ToasterProvider/>
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider/>
+            <ModalProvider products ={products}/>
             <Sidebar songs={userSongs}>
               {children}
             </Sidebar>

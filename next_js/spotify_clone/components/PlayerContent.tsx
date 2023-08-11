@@ -2,8 +2,9 @@
 import { PlayerContentProps } from '@/types'
 import React,{useEffect, useState} from 'react'
 import {BsPauseFill, BsPlayFill} from 'react-icons/bs'
-import { LikeButton, PlayListItem, Slider } from './index'
+import { LikeButton, PlayListItem, Seekbar, Slider } from './index'
 import {HiSpeakerWave, HiSpeakerXMark} from 'react-icons/hi2'
+import ReactAudioPlayer from 'react-audio-player';
 import { AiFillStepBackward, AiFillStepForward } from 'react-icons/ai'
 import usePlayer from '@/hooks/usePlayer'
 import useSound from 'use-sound'
@@ -25,6 +26,14 @@ const PlayerContent = ({song, songUrl}:PlayerContentProps) => {
         }
         player.setId(nextSong)
     }
+    const [audioDuration, setAudioDuration] = useState<number>(0);
+
+    const handleLoadMetadata = (event: React.SyntheticEvent<HTMLAudioElement> | Event) => {
+        const audio = event.target;
+        setAudioDuration(audio.duration);
+    };
+    console.log(audioDuration)
+
     const onPlayPrevious = ()=>{
         if(player.ids.length ===0){
             return
@@ -72,8 +81,28 @@ const PlayerContent = ({song, songUrl}:PlayerContentProps) => {
             setVolume(0)
         }
     }
+    // const [currentPosition, setCurrentPosition] = useState<number>(0);
+
+    // Update the current position state as the audio progresses
+    // useEffect(() => {
+    //     if (sound) {
+    //         sound.setPosition((position) => {
+    //             setCurrentPosition(position / 1000); // Position is in milliseconds, converting to seconds
+    //         });
+    //     }
+    // }, [sound]);
+
+    // // Function to handle Seekbar changes
+    // const handleSeekChange = (newValue) => {
+    //     if (sound) {
+    //         const newPosition = newValue * 1000; // Convert seconds to milliseconds
+    //         sound.stop(); // Stop the current playback
+    //         sound.play({ position: newPosition }); // Start playback from the new position
+    //         setCurrentPosition(newPosition / 1000); // Update the current position in seconds
+    //     }
+    // };
   return (
-    <div className='grid grid-cols-2 md:grid-cols-3 h-full'>
+    <div className='grid grid-cols-2 md:grid-cols-3 h-auto'>
         <div className='flex w-full justify-start'>
             <div className='flex items-center gap-x-4'>
                 <PlayListItem data={song }/>
@@ -85,12 +114,21 @@ const PlayerContent = ({song, songUrl}:PlayerContentProps) => {
                 <Icon size={30} className='text-black'/>
             </div>
         </div>
-        <div className='hidden h-full md:flex justify-center items-center w-full max-w-[722px] gap-x-6'>
-            <AiFillStepBackward  size={30} className='text-neutral-400 cursor-pointer hover:text-white transition' onClick={onPlayPrevious}/>
-            <div className='flex items-center justify-center h-10 w-10 rounded-full bg-white p-1 cursor-pointer' onClick={handlePlay}>
-                <Icon size={30} className='text-black'/>
+        <div className='hidden h-full md:flex justify-center items-center flex-col w-full max-w-[722px] gap-x-6'>
+            <div className='flex flex-1 items-center justify-center'> 
+                <AiFillStepBackward  size={30} className='text-neutral-400 cursor-pointer hover:text-white transition' onClick={onPlayPrevious}/>
+                <div className='flex items-center justify-center h-10 w-10 rounded-full bg-white p-1 cursor-pointer' onClick={handlePlay}>
+                    <Icon size={30} className='text-black'/>
+                </div>
+                <AiFillStepForward onClick={onPlayNext} className='text-neutral-400 cursor-pointer hover:text-white transition' size={30}/>
+            </div> 
+            <div className='flex flex-1 items-center justify-center'>
+            {/* <ReactAudioPlayer
+    src={songUrl}
+    onLoadedMetadata={handleLoadMetadata}
+/> */}
+                {/* <Seekbar value={currentPosition} max={song.duration} onChange={handleSeekChange} /> */}
             </div>
-            <AiFillStepForward onClick={onPlayNext} className='text-neutral-400 cursor-pointer hover:text-white transition' size={30}/>
         </div>
         <div className='hidden md:flex w-full justify-end pr-2'>
             <div className='flex items-center gap-x-2 w-[120px]'>
