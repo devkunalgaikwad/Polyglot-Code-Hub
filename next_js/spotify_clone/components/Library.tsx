@@ -8,16 +8,20 @@ import useUploadModal from '@/hooks/useUploadModal'
 import { LibrayProps } from '@/types'
 import { PlayListItem } from './index'
 import useOnPlay from '@/hooks/useOnPlay'
+import useSubscribeModal from '@/hooks/useSubscribeModal'
 
 const Library = ({songs}:LibrayProps) => {
+    const subscribeModal = useSubscribeModal()
     const authModal = useAuthModal()
     const uploadModal = useUploadModal()
-    const {user} = useUser()
+    const {user, subscription} = useUser()
     const onClick = ()=>{
         if (!user) {
             return authModal.onOpen()
         }
-        
+        if (!subscription){
+            return subscribeModal.onOpen()
+        }
         return uploadModal.onOpen()
     };
     const onPlay = useOnPlay(songs)

@@ -13,16 +13,19 @@ import { useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useUser } from '@/hooks/useUser'
 import { FaUserAlt } from 'react-icons/fa'
 import {toast} from 'react-hot-toast'
+import usePlayer from '@/hooks/usePlayer'
 
 const Header = ({children,className}:HeaderProps) => {
     const authModal = useAuthModal()
     const router = useRouter()
+    const player = usePlayer()
     const supabaseClient = useSupabaseClient()
     const {user}= useUser()
 
     const handleLogout = async()=>{
         const {error} = await supabaseClient.auth.signOut()
-        // to do fuction that music player to be stopped or reset
+        player.reset()
+        
         router.refresh()
         if (error){
             toast.error(error.message)
@@ -34,18 +37,18 @@ const Header = ({children,className}:HeaderProps) => {
     <div className={twMerge('h-fit bg-gradient-to-b from-emerald-800 p-6',className)}>
         <div className='w-full mb-4 flex items-center justify-between'>
             <div className='hidden md:flex gap-x-2 items-center'>
-                <button type='button' onClick={()=> router.back()} className='rounded-full bg-black flex items-center justify-center hover:opacity-75 transition'>
+                <button title='back' type='button' onClick={()=> router.back()} className='rounded-full bg-black flex items-center justify-center hover:opacity-75 transition'>
                     <RxCaretLeft size={35} className={'text-white'}/>
                 </button>
-                <button type='button' onClick={()=> router.forward()} className='rounded-full bg-black flex items-center justify-center hover:opacity-75 transition'>
+                <button type='button' title='forward' onClick={()=> router.forward()} className='rounded-full bg-black flex items-center justify-center hover:opacity-75 transition'>
                     <RxCaretRight size={35} className={'text-white'}/>
                 </button>
             </div>
             <div className='flex md:hidden gap-x-2 items-center'> 
-                <button className='rounded-full p-2 bg-white items-center justify-center hover:opacity-75'>
+                <button type='button' title ='Home' className='rounded-full p-2 bg-white items-center justify-center hover:opacity-75'>
                     <HiHome className ={'text-black'} size={20}/>
                 </button>
-                <button className='rounded-full p-2 bg-white items-center justify-center hover:opacity-75'>
+                <button type='button' title='search' className='rounded-full p-2 bg-white items-center justify-center hover:opacity-75'>
                     <BiSearch className ={'text-black'} size={20}/>
                 </button>
             </div>
