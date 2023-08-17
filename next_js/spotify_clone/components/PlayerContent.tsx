@@ -26,14 +26,6 @@ const PlayerContent = ({song, songUrl}:PlayerContentProps) => {
         }
         player.setId(nextSong)
     }
-    const [audioDuration, setAudioDuration] = useState<number>(0);
-
-    const handleLoadMetadata = (event: React.SyntheticEvent<HTMLAudioElement> | Event) => {
-        const audio = event.target;
-        setAudioDuration(audio.duration);
-    };
-    console.log(audioDuration)
-
     const onPlayPrevious = ()=>{
         if(player.ids.length ===0){
             return
@@ -45,7 +37,7 @@ const PlayerContent = ({song, songUrl}:PlayerContentProps) => {
         }
         player.setId(previousSong)
     }
-    const [play, { pause, sound }] = useSound(
+    const [play, { pause,duration, sound }] = useSound(
         songUrl,
         { 
           volume: volume,
@@ -81,6 +73,16 @@ const PlayerContent = ({song, songUrl}:PlayerContentProps) => {
             setVolume(0)
         }
     }
+    const [currTime , serCurrTime] = useState({
+        min : '',
+        sec:'',
+    })
+    const [seconds,setSeconds] = useState() 
+    useEffect(()=>{
+        const sec = duration /1000;
+        const min = Math.floor(sec/60);
+    })
+    console.log(duration)
     // const [currentPosition, setCurrentPosition] = useState<number>(0);
 
     // Update the current position state as the audio progresses
